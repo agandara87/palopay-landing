@@ -155,4 +155,229 @@ export default function Page() {
             <a href="#producto" className="hover:text-slate-900">Producto</a>
             <a href="#psp" className="hover:text-slate-900">Norma PSP</a>
             <a href="#faq" className="hover:text-slate-900">FAQ</a>
-            <a href="/reclamos" className="hover:te
+            <a href="/reclamos" className="hover:text-slate-900">Reclamos</a>
+          </nav>
+          <a
+            href={`mailto:${site.ctaEmail}`}
+            className="rounded-xl bg-slate-900 px-4 py-2 text-sm font-medium text-white hover:bg-slate-800"
+          >
+            Pedir acceso
+          </a>
+        </div>
+      </header>
+
+      <main>
+        <section className="bg-gradient-to-b from-slate-50 to-white">
+          <div className="mx-auto grid max-w-6xl gap-10 px-4 py-14 md:grid-cols-2 md:py-20">
+            <div>
+              <div className="flex flex-wrap gap-2">
+                <Badge>Wallet para gig economy</Badge>
+                <Badge>Transparencia PSP</Badge>
+              </div>
+              <h1 className="mt-5 text-4xl font-semibold tracking-tight md:text-5xl">
+                {site.tagline}
+              </h1>
+              <p className="mt-4 text-lg text-slate-600">{site.subtagline}</p>
+              <ul className="mt-6 space-y-2 text-sm text-slate-700">
+                {site.productBullets.map((b) => (
+                  <li key={b}>• {b}</li>
+                ))}
+              </ul>
+              <div className="mt-8 flex flex-wrap gap-3">
+                <a
+                  href={`mailto:${site.ctaEmail}`}
+                  className="rounded-xl bg-slate-900 px-5 py-3 text-sm font-medium text-white hover:bg-slate-800"
+                >
+                  Quiero probar Palopay
+                </a>
+                <a
+                  href="#psp"
+                  className="rounded-xl border border-slate-200 px-5 py-3 text-sm font-medium hover:bg-slate-50"
+                >
+                  Ver enfoque PSP
+                </a>
+              </div>
+
+              <div className="mt-8 rounded-2xl border border-slate-200 bg-white p-5 text-sm shadow-sm">
+                <div className="font-semibold">Información del proveedor</div>
+                <div className="mt-2 text-slate-600">
+                  {site.legalName} — CUIT {site.cuit}
+                  <br />
+                  Domicilio legal: {site.legalAddress}
+                  <br />
+                  Atención:{" "}
+                  <a className="underline" href={`mailto:${site.supportEmail}`}>
+                    {site.supportEmail}
+                  </a>{" "}
+                  ·{" "}
+                  <a className="underline" href={`tel:${site.supportPhone}`}>
+                    {site.supportPhone}
+                  </a>
+                </div>
+                <div className="mt-3 text-xs text-slate-500">
+                  Ver{" "}
+                  <a className="underline" href="/terminos">Términos</a>,{" "}
+                  <a className="underline" href="/privacidad">Privacidad</a> y{" "}
+                  <a className="underline" href="/reclamos">Reclamos</a>.
+                </div>
+              </div>
+            </div>
+
+            <div className="rounded-3xl border border-slate-200 bg-white p-8 shadow-sm">
+              <div className="text-sm font-semibold text-slate-500">¿Para quién es?</div>
+              <h3 className="mt-2 text-2xl font-semibold tracking-tight">
+                Trabajadores independientes y plataformas
+              </h3>
+              <p className="mt-3 text-sm text-slate-600">
+                Ideal si cobrás por turnos, entregas, viajes o tareas. Palopay
+                ordena tus ingresos y te ayuda a convertir liquidaciones en
+                estabilidad financiera.
+              </p>
+              <div className="mt-6 grid gap-3">
+                <div className="rounded-2xl bg-slate-50 p-4 text-sm">
+                  <div className="font-semibold">Liquidaciones</div>
+                  <div className="mt-1 text-slate-600">
+                    Historial, detalle y estado: “qué cobré” y “qué me falta”.
+                  </div>
+                </div>
+                <div className="rounded-2xl bg-slate-50 p-4 text-sm">
+                  <div className="font-semibold">Ahorro e inversión</div>
+                  <div className="mt-1 text-slate-600">
+                    Objetivos, bolsillos y opciones simples para hacer crecer tu saldo.
+                  </div>
+                </div>
+                <div className="rounded-2xl bg-slate-50 p-4 text-sm">
+                  <div className="font-semibold">Cobros y pagos</div>
+                  <div className="mt-1 text-slate-600">
+                    Pagá servicios, transferí y administrá tu día a día desde la app.
+                  </div>
+                </div>
+              </div>
+              <div className="mt-6 rounded-2xl border border-slate-200 p-4 text-xs text-slate-600">
+                Nota: funcionalidades sujetas a disponibilidad del producto, onboarding y validaciones de seguridad.
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="producto">
+          <div className="mx-auto max-w-6xl px-4 py-14 md:py-20">
+            <SectionTitle
+              kicker="PRODUCTO"
+              title="Una wallet pensada para ingresos variables"
+              subtitle="Tu plata entra en liquidaciones; Palopay la convierte en control, ahorro y previsibilidad."
+            />
+            <div className="mt-10 grid gap-4 md:grid-cols-3">
+              <Card title="Control de liquidaciones" text="Consolidá ingresos por plataforma, día y concepto. Alertas si falta algo." />
+              <Card title="Bolsillos inteligentes" text="Separá automáticamente para gastos fijos, ahorro y objetivos." />
+              <Card title="Pagos y transferencias" text="Mové tu dinero cuando lo necesitás con trazabilidad y soporte." />
+            </div>
+          </div>
+        </section>
+
+        <section id="psp" className="bg-slate-50">
+          <div className="mx-auto max-w-6xl px-4 py-14 md:py-20">
+            <SectionTitle
+              kicker="NORMA PSP / BCRA"
+              title="Transparencia, atención y buenas prácticas"
+              subtitle="Proveedor identificado, condiciones claras, canales de reclamo y seguridad."
+            />
+            <div className="mt-10 grid gap-4 md:grid-cols-2">
+              <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+                <div className="text-base font-semibold">Información PSP</div>
+                <p className="mt-2 text-sm text-slate-600">{site.psp.statusText}</p>
+                <div className="mt-4 rounded-xl bg-slate-50 p-4 text-sm text-slate-700">
+                  <div className="font-medium">{site.psp.registryText}</div>
+                  <div className="mt-1">
+                    Referencia pública:{" "}
+                    <a className="underline" href={site.psp.registryUrl} target="_blank" rel="noreferrer">
+                      Registro PSP (BCRA)
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+                <div className="text-base font-semibold">Compromisos visibles</div>
+                <ul className="mt-3 space-y-2 text-sm text-slate-700">
+                  {site.complianceBullets.map((b) => (
+                    <li key={b}>• {b}</li>
+                  ))}
+                </ul>
+                <div className="mt-4 text-xs text-slate-500">
+                  Importante: el contenido final debe reflejar tu operatoria real (comisiones, plazos, rails, contracargos si aplica).
+                </div>
+              </div>
+            </div>
+
+            <div className="mt-8 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+              <div className="text-base font-semibold">Atención al usuario y reclamos</div>
+              <p className="mt-2 text-sm text-slate-600">
+                Soporte:{" "}
+                <a className="underline" href={`mailto:${site.supportEmail}`}>
+                  {site.supportEmail}
+                </a>{" "}
+                ·{" "}
+                <a className="underline" href={`tel:${site.supportPhone}`}>
+                  {site.supportPhone}
+                </a>
+              </p>
+              <p className="mt-2 text-sm text-slate-600">
+                Si querés iniciar un reclamo, visitá{" "}
+                <a className="underline" href="/reclamos">/reclamos</a>.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section id="faq">
+          <div className="mx-auto max-w-6xl px-4 py-14 md:py-20">
+            <SectionTitle
+              kicker="FAQ"
+              title="Preguntas frecuentes"
+              subtitle="Texto simple, directo y alineado a compliance."
+            />
+            <div className="mt-10 grid gap-4 md:grid-cols-2">
+              {site.faq.map((item) => (
+                <div key={item.q} className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+                  <div className="font-semibold">{item.q}</div>
+                  <p className="mt-2 text-sm text-slate-600">{item.a}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="border-t border-slate-200">
+          <div className="mx-auto max-w-6xl px-4 py-14">
+            <div className="rounded-3xl bg-slate-900 p-8 text-white md:p-10">
+              <div className="text-sm text-white/70">Acceso anticipado</div>
+              <div className="mt-2 text-2xl font-semibold tracking-tight md:text-3xl">
+                Sumate y empezá a ordenar tus liquidaciones
+              </div>
+              <p className="mt-3 text-sm text-white/70 md:text-base">
+                Contanos qué plataforma usás y te escribimos con el onboarding.
+              </p>
+              <div className="mt-6 flex flex-wrap gap-3">
+                <a
+                  href={`mailto:${site.ctaEmail}?subject=Quiero%20acceso%20a%20Palopay&body=Hola,%20quiero%20probar%20Palopay.%20Plataforma:%20____%20Pa%C3%ADs:%20____`}
+                  className="rounded-xl bg-white px-5 py-3 text-sm font-semibold text-slate-900 hover:bg-white/90"
+                >
+                  Pedir acceso
+                </a>
+                <a
+                  href="/reclamos"
+                  className="rounded-xl border border-white/25 px-5 py-3 text-sm font-medium text-white hover:bg-white/10"
+                >
+                  Iniciar reclamo
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <Footer />
+    </div>
+  );
+}
